@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pe-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabelas alura</title>
+    <link rel="stylesheet" href="stylo.css">
+</head>
+<body>
+    <main>
+        <h1>ficha de nutriçao </h1>
+        <table id="tabela-paciente">
+            <thead>
+                <tr class="paciente">
+                    <th>nome</th>
+                    <th>altura</th>
+                    <th>peso</th>
+                    <th>IMC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="paciente" id="linha-paciente">
+                    <td class="info-nome">antonio</td>
+                    <td class="info-altura">1,85</td>
+                    <td class="info-peso">70</td>
+                    <td class="info-imc">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <form id="form-adiciona">
+        <p>
+            <label for="name">nome: </label>
+            <input name="name" id="name" type="text" placeholder="digite o nome aki">
+            <label for="altura">altura: </label>
+            <input name="altura" id="altura" type="text">
+        </p>
+        <p>
+            <label for="peso">peso: </label>
+            <input name="peso" id="peso" type="text">
+        </p>
+        <button id="bto-add-paciente" class="bto-principal">adicionar</button>
+    </form>
+    <script src="scritp.js"></script>
+</body>
+</html>
