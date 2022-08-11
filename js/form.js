@@ -11,17 +11,24 @@ botaoAdicionar.addEventListener("click", function(event){ // isso eh um escutado
 function CriaLista(nome, altura, peso, imc){
 
     var pacienteTr = document.createElement("tr"); // cria um tr no HTMl
-    
+    pacienteTr.classList.add("paciente")
+
     var nomeTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var imcTd= document.createElement("td");
-
+    nomeTd.classList.add("info-nome");
     nomeTd.textContent = nome; // o valor nomeTd ta sem nada ai ele coloca esse valor q vem do input
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    imcTd.textContent = imc;
 
+    var alturaTd = document.createElement("td");
+    alturaTd.classList.add("info-altura");
+    alturaTd.textContent = altura;
+
+    var pesoTd = document.createElement("td");
+    pesoTd.classList.add("info-peso");
+    pesoTd.textContent = peso;
+
+    var imcTd= document.createElement("td");
+    imcTd.classList.add("info-imc");
+    imcTd.textContent = imc;
+    
 
     pacienteTr.appendChild(nomeTd);
     pacienteTr.appendChild(alturaTd);
