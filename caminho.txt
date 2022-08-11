@@ -1,1 +1,3 @@
 C:/Users/ander/Documents/curso/JS/alura/tabela
+
+C:/Users/Admin/Documents/nova/javaScript/tabela
