@@ -13,22 +13,10 @@ function CriaLista(nome, altura, peso, imc){
     var pacienteTr = document.createElement("tr"); // cria um tr no HTMl
     pacienteTr.classList.add("paciente")
 
-    var nomeTd = document.createElement("td");
-    nomeTd.classList.add("info-nome");
-    nomeTd.textContent = nome; // o valor nomeTd ta sem nada ai ele coloca esse valor q vem do input
-
-    var alturaTd = document.createElement("td");
-    alturaTd.classList.add("info-altura");
-    alturaTd.textContent = altura;
-
-    var pesoTd = document.createElement("td");
-    pesoTd.classList.add("info-peso");
-    pesoTd.textContent = peso;
-
-    var imcTd= document.createElement("td");
-    imcTd.classList.add("info-imc");
-    imcTd.textContent = imc;
-    
+    var nomeTd = montaTd(nome, "info-peso"); // o valor nomeTd ta sem nada ai ele coloca er q vem sse valodo input
+    var alturaTd = montaTd(altura, "info-peso");
+    var pesoTd = montaTd(peso, "info-peso");
+    var imcTd = montaTd(imc, "info-imc");
 
     pacienteTr.appendChild(nomeTd);
     pacienteTr.appendChild(alturaTd);
@@ -52,4 +40,11 @@ function obtemPacienteFormulario(form){
     }
 
     return paciente
+}
+
+function montaTd(dado, classe){
+    var td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
+    return td;
 }
