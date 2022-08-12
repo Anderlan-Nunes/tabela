@@ -5,31 +5,12 @@ botaoAdicionar.addEventListener("click", function(event){ // isso eh um escutado
     //fazendo o valor da variavel pelo id da <form> e o campo name do <input mame = variavel>.value
     var form = document.querySelector("#form-adiciona");
     var paciente = obtemPacienteFormulario(form);
-    CriaLista(paciente.nome, paciente.altura, paciente.peso, paciente.imc);
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-paciente"); // coloca dentro do tbody
+    tabela.appendChild(pacienteTr);
+    form.reset(); // limpa formulario
 });
 
-function CriaLista(nome, altura, peso, imc){
-
-    var pacienteTr = document.createElement("tr"); // cria um tr no HTMl
-    pacienteTr.classList.add("paciente")
-
-    var nomeTd = montaTd(nome, "info-peso"); // o valor nomeTd ta sem nada ai ele coloca er q vem sse valodo input
-    var alturaTd = montaTd(altura, "info-peso");
-    var pesoTd = montaTd(peso, "info-peso");
-    var imcTd = montaTd(imc, "info-imc");
-
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(imcTd);
-
-    var tabela = document.querySelector("#tabela-paciente");
-    tabela.appendChild(pacienteTr);
-
-}
-
-var nome = document.querySelector("#tabela-paciente")
-console.log(nome)
 
 function obtemPacienteFormulario(form){
     var paciente = {
@@ -42,6 +23,19 @@ function obtemPacienteFormulario(form){
     return paciente
 }
 
+function montaTr(paciente){
+
+    var pacienteTr = document.createElement("tr"); // cria um tr no HTMl
+    pacienteTr.classList.add("paciente")
+
+    pacienteTr.appendChild(montaTd(paciente.nome, "info-peso"));// o valor nomeTd ta sem nada ai ele coloca er q vem sse valodo input
+    pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
+    pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
+    pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
+
+    return pacienteTr;
+
+}
 function montaTd(dado, classe){
     var td = document.createElement("td");
     td.textContent = dado;
