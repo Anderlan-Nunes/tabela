@@ -20,12 +20,14 @@ var pacientes = document.querySelectorAll(".paciente")
         if(altura < 1 || altura > 2.5){
             alturaTd.textContent = "altura inválida";
             var alturaEhValida = false;
+            paciente.classList.add("paciente-invalido")
         }
 
         if(peso > 400 || peso < 0){
             pesoTd.textContent = "peso inválido";
             var pesoEhvalido = false;
-        }else
+            paciente.classList.add("paciente-invalido")
+        }
 
         if (pesoEhvalido && alturaEhValida){
             var imc = calculaImc(peso, altura);
